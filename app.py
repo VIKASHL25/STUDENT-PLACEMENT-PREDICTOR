@@ -18,7 +18,7 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # taking input from form 
+     
     input_data = pd.DataFrame([{
         'IQ': float(request.form['IQ']),
         'Prev_Sem_Result': float(request.form['Prev_Sem_Result']),
@@ -36,7 +36,7 @@ def predict():
     
     prediction = model.predict(input_transformed)[0]
 
-    # prediction
+    
     result = "Yes! You are eligible for placement." if prediction == 1 else " No, you are not eligible for placement."
 
   
